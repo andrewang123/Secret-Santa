@@ -17,8 +17,6 @@ def noIsland(nameList, assignDictionary):
         else:
             assignDictionary[nameList[x]] = nameList[x+1]
             print(nameList[x] + " : " + nameList[x+1])
-
-
     #print(assignDictionary)
 
 # Description: Gets the total number of participants
@@ -31,10 +29,7 @@ def numberOfParticipants():
     if (name == "stop" or name == "Stop"):
         countOfPeeps = 0;
     while (name != "stop" and name != "Stop"):
-
         #add values to the list and dictionary
-        global listOfNames
-        global dictOfNames
         listOfNames.append(name)
         dictOfNames[name] = ""
         if (name != "stop" and name != "Stop"):
