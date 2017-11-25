@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e76fc02e-80db-4d19-9e7d-821beb0d8c23" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/secretSanta.py" afterPath="$PROJECT_DIR$/secretSanta.py" />
-    </list>
+    <list default="true" id="e76fc02e-80db-4d19-9e7d-821beb0d8c23" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +14,8 @@
       <file leaf-file-name="secretSanta.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/secretSanta.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+            <state relative-caret-position="527">
+              <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -184,8 +181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/secretSanta.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        <state relative-caret-position="527">
+          <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
           <folding />
         </state>
       </provider>
