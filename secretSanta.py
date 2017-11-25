@@ -1,4 +1,11 @@
 # Andrew Ang & Rafael Valdez & Henry Ang
+'''
+TO DO LIST (no particular order)
+1. Make email work
+2. Ask user for all emails and store somewhere
+3. Make output files
+'''
+
 import random
 
 listOfNames = []  # list of names
@@ -43,9 +50,8 @@ def numberOfParticipants():
 
 # MAIN STARTS HERE
 print("Welcome to the Secret Santa App!")
-print("Please follow the steps to determine your secret santa!")
-#totalNumOfPeeps = int(input("How many participants are there? "));
-#print("What are the names of the participants?")
+print("Please follow the steps below to determine your secret santa!")
+print("What are the names of the participants?")
 print("First and Last Name: (type \"stop\" to stop)")
 numOfPeeps = numberOfParticipants();
 
@@ -63,6 +69,7 @@ while(numOfPeeps < 3):
 
 
 choice = 0
+print("Select the type of randomization for the secret santa.")
 choice = int(input("Select (1) for anyone can get anyone.\n"
                    "Select (2) for no pairs to be formed.\n"
                    "\tex)Tom -> John and John -> Tom \n "
