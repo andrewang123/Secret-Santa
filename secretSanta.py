@@ -62,6 +62,18 @@ while(numOfPeeps < 3):
     numOfPeeps = numberOfParticipants()
 
 
+choice = 0
+choice = int(input("Select (1) for anyone can get anyone.\n"
+                   "Select (2) for no pairs to be formed.\n"
+                   "\tex)Tom -> John and John -> Tom \n "
+                   "\t   Is NOT allowed "))
+if(choice == 1):
+    print(choice) # PUT FUNCTION HERE
+elif(choice == 2):
+    print(choice) # PUT FUNCTION HERE
+else:
+    print("please try again") # MAKE A LOOP THAT KEEPS ASKING
+
 # EXAMPLE VALUES
 # myList = ["Naveen", "Courtney", "Robert", "Hector", "Andrew", "Henry", "Rafael"]
 # myDict = {
