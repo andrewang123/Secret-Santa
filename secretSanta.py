@@ -24,10 +24,12 @@ def noIsland(nameList, assignDictionary):
 # in this function pairs are allowed to happen
 # Parameters: List of people's names and dictionary
 # Returns: Dictionary of people
-def multIsland(nameList, assignDictionary):
+def multIsland(nameList, assignDictionary, numOfPeeps):
 
     # if the total number of people is three, just call the other one
     print("hey")
+
+    #otherwise do the algorithm thing
 
 
 
@@ -85,14 +87,18 @@ print("Select the type of randomization for the secret santa.")
 choice = int(input("Select (1) for anyone can get anyone.\n"
                    "Select (2) for no pairs can be formed.\n"
                    "\tex)Tom -> John and John -> Tom \n "
-                   "\t   Is NOT allowed "))
-if(choice == 1):
-    print(choice) # PUT FUNCTION HERE
-elif(choice == 2):
-    noIsland(listOfNames, dictOfNames)  # Generate the random selection\
-else:
-    print("please try again") # MAKE A LOOP THAT KEEPS ASKING
+                   "\t   Is NOT allowed \n"))
 
+while(choice != 1 and choice != 2):
+        print("Please try again. Options are 1 or 2.") # MAKE A LOOP THAT KEEPS ASKING
+        choice = int(input("Select (1) for anyone can get anyone.\n"
+                           "Select (2) for no pairs can be formed.\n"
+                           "\tex)Tom -> John and John -> Tom \n "
+                           "\t   Is NOT allowed \n"))
+if(choice == 1):
+        multIsland(listOfNames, dictOfNames, numOfPeeps) # Generate pure random
+elif(choice == 2):
+        noIsland(listOfNames, dictOfNames)  # Generate the random selection w/ no pairs
 
 # Generates outputfile for all secret santa particpants
 # for key,val in dictOfNames.items():
