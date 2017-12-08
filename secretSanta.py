@@ -1,7 +1,6 @@
 # Andrew Ang & Rafael Valdez & Henry Ang
 # The purpose of this program is to decide the secret santa
 # between a group of people.
-#dksdflksjdlfk
 import random
 
 listOfNames = []  # list of names
@@ -40,6 +39,7 @@ def numberOfParticipants():
         name = input()
         if (name == "stop" or name == "Stop"):
             countOfPeeps -= 1 #account for case when user enters stop at beginning
+    print()
     print(str(countOfPeeps) + " people are participating in secret santa.")
     return countOfPeeps
 
@@ -65,11 +65,24 @@ while(numOfPeeps < 3):
     print("(All previous entries will be erased)")
     numOfPeeps = numberOfParticipants()
 
-noIsland(listOfNames, dictOfNames) # Generate the random selection
+print()
+noIsland(listOfNames, dictOfNames) # Generate the random selection\
+print()
 
-'''
-PUT YOUR CODE HERE HENRY!!!
-'''
+# Generates outputfile for all secret santa particpants
+for key,val in dictOfNames.items():
+    outFile = key + ".txt"
+    try:
+        with open(str(outFile), 'w') as outputfile:  # create output file
+            # prints to output file
+            print(key, file=outputfile)
+            print("Your secret santa is " + val, file=outputfile)
+        outputfile.close()
+        print("Results in file " + outFile)
+    except(IndexError):
+        print("Error creating file")
+        quit()
+
 
 #Test the output
 # for x in listOfNames:
