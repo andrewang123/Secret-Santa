@@ -1,11 +1,6 @@
 # Andrew Ang & Rafael Valdez & Henry Ang
-'''
-TO DO LIST (no particular order)
-1. Make email work
-2. Ask user for all emails and store somewhere
-3. Make output files
-'''
-
+# The purpose of this program is to decide the secret santa
+# between a group of people.
 import random
 
 listOfNames = []  # list of names
@@ -24,7 +19,6 @@ def noIsland(nameList, assignDictionary):
         else:
             assignDictionary[nameList[x]] = nameList[x+1]
             print(nameList[x] + " : " + nameList[x+1])
-    #print(assignDictionary)
 
 # Description: Gets the total number of participants
 # Parameters: N/A
@@ -52,56 +46,35 @@ def numberOfParticipants():
 print("Welcome to the Secret Santa App!")
 print("Please follow the steps below to determine your secret santa!")
 print("What are the names of the participants?")
-print("First and Last Name: (type \"stop\" to stop)")
-numOfPeeps = numberOfParticipants();
-
+print("Names: (type \"stop\" to stop)")
+numOfPeeps = numberOfParticipants()
 #Force the user to enter values > than 2
 while(numOfPeeps < 3):
+    #Empty the lists
     listOfNames = []
     dictOfNames = {}
     if(numOfPeeps == 0):
         print("You need to have at least 3 members for secret santa.")
     elif(numOfPeeps == 1):
         print("It wouldn't be much of a suprise if you were your own secret santa.")
+        print("You need at least 3 members for secret santa, please try again.")
     else: #other option is 2, not possible for neg values
-        print("I wonder who my secret santa is considering there are only two people...")
+        print("It wouldn't be much of suprise with two people exchanging gifts.")
+        print("You need at least 3 members for secret santa, please try again.")
+    print("(All previous entries will be erased)")
     numOfPeeps = numberOfParticipants()
 
+noIsland(listOfNames, dictOfNames) # Generate the random selection
 
-choice = 0
-print("Select the type of randomization for the secret santa.")
-choice = int(input("Select (1) for anyone can get anyone.\n"
-                   "Select (2) for no pairs to be formed.\n"
-                   "\tex)Tom -> John and John -> Tom \n "
-                   "\t   Is NOT allowed "))
-if(choice == 1):
-    print(choice) # PUT FUNCTION HERE
-elif(choice == 2):
-    print(choice) # PUT FUNCTION HERE
-else:
-    print("please try again") # MAKE A LOOP THAT KEEPS ASKING
+'''
+PUT YOUR CODE HERE HENRY!!!
+'''
 
-# EXAMPLE VALUES
-# myList = ["Naveen", "Courtney", "Robert", "Hector", "Andrew", "Henry", "Rafael"]
-# myDict = {
-#     "Naveen": "",
-#     "Courtney": "",
-#     "Robert": "",
-#     "Hector": "",
-#     "Andrew": "",
-#     "Henry": "",
-#     "Rafael": ""
-# }
-
-#noIsland(myList, myDict)
-
-# END OF EXAMPLE VALUES
-
-
-for x in listOfNames:
-    print("List values: ", end="")
-    print(x)
-for i in dictOfNames:
-    print("Dictionary values: ", end="")
-    print (i, dictOfNames[i])
+#Test the output
+# for x in listOfNames:
+#     print("List values: ", end="")
+#     print(x)
+# for i in dictOfNames:
+#     print("Dictionary values: ", end="")
+#     print (i, dictOfNames[i])
 
