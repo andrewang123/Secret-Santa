@@ -1,10 +1,13 @@
 # Andrew Ang & Rafael Valdez & Henry Ang
 # The purpose of this program is to decide the secret santa
 # between a group of people.
+
 import random
+from sendemailMIMEmsg import SendEmailMsgWithAttachmentFilename
 
 listOfNames = []  # list of names
 dictOfNames = {}  # dictionary
+dictOfEmails = {}
 
 # Description: Takes in list of people and will randomize order and assign secret santa
 # Parameters: List of people's names and dictionary
@@ -27,17 +30,26 @@ def numberOfParticipants():
     countOfPeeps = 1
     print(str(countOfPeeps) + ". ", end="")
     name = str(input())
-    if (name == "stop" or name == "Stop"):
+    if (name == "stop"):
+        return countOfPeeps
+    print("Enter " + name + "'s Email: ", end="")
+    email = str(input())
+    if (name == "stop" or name == "Stop" or email == "stop"):
         countOfPeeps = 0;
-    while (name != "stop" and name != "Stop"):
+    while (name != "stop" and name != "Stop" and email != "stop"):
         #add values to the list and dictionary
         listOfNames.append(name)
         dictOfNames[name] = ""
-        if (name != "stop" and name != "Stop"):
+        dictOfEmails[name] = email
+        if (name != "stop" and name != "Stop" and email != "stop"):
             countOfPeeps += 1
         print(str(countOfPeeps) + ". ", end="")
         name = input()
-        if (name == "stop" or name == "Stop"):
+        if (name == "stop"):
+            return countOfPeeps
+        print("Enter " + name + "'s Email: ", end="")
+        email = input()
+        if (name == "stop" or name == "Stop" or email == "stop"):
             countOfPeeps -= 1 #account for case when user enters stop at beginning
     print()
     print(str(countOfPeeps) + " people are participating in secret santa.")
@@ -54,6 +66,7 @@ while(numOfPeeps < 3):
     #Empty the lists
     listOfNames = []
     dictOfNames = {}
+    dictOfEmails = {}
     if(numOfPeeps == 0):
         print("You need to have at least 3 members for secret santa.")
     elif(numOfPeeps == 1):
@@ -66,7 +79,11 @@ while(numOfPeeps < 3):
     numOfPeeps = numberOfParticipants()
 
 print()
-noIsland(listOfNames, dictOfNames) # Generate the random selection\
+noIsland(listOfNames, dictOfNames) # Generate the random selection
+print()
+
+for key,val in dictOfEmails.items():
+    print(key + " => " + val)
 print()
 
 # Generates outputfile for all secret santa particpants
@@ -79,11 +96,18 @@ for key,val in dictOfNames.items():
             print("Your secret santa is " + val, file=outputfile)
         outputfile.close()
         print("Results in file " + outFile)
+        SendEmailMsgWithAttachmentFilename('angh@spu.edu',
+                                           [dictOfEmails[key]],
+                                           'Secret Santa Homies Group 2017',
+                                           'Your secret santa is attached in the file below \n',
+                                           str(outFile))
+        print("Email sent to " + key)
     except(IndexError):
         print("Error creating file")
         quit()
 
-#sakljdhf
+
+
 #Test the output
 # for x in listOfNames:
 #     print("List values: ", end="")
