@@ -20,6 +20,19 @@ def noIsland(nameList, assignDictionary):
             assignDictionary[nameList[x]] = nameList[x+1]
             print(nameList[x] + " : " + nameList[x+1])
 
+# Description: Takes in list of people and will randomize order and assign secret santa
+# in this function pairs are allowed to happen
+# Parameters: List of people's names and dictionary
+# Returns: Dictionary of people
+def multIsland(nameList, assignDictionary):
+
+    # if the total number of people is three, just call the other one
+    print("hey")
+
+
+
+
+
 # Description: Gets the total number of participants
 # Parameters: N/A
 # Returns: Number of people participating
@@ -65,23 +78,35 @@ while(numOfPeeps < 3):
     print("(All previous entries will be erased)")
     numOfPeeps = numberOfParticipants()
 
-print()
-noIsland(listOfNames, dictOfNames) # Generate the random selection\
-print()
+
+#USER GETS A CHOICE FOR TYPE OF PAIRING
+choice = 0
+print("Select the type of randomization for the secret santa.")
+choice = int(input("Select (1) for anyone can get anyone.\n"
+                   "Select (2) for no pairs can be formed.\n"
+                   "\tex)Tom -> John and John -> Tom \n "
+                   "\t   Is NOT allowed "))
+if(choice == 1):
+    print(choice) # PUT FUNCTION HERE
+elif(choice == 2):
+    noIsland(listOfNames, dictOfNames)  # Generate the random selection\
+else:
+    print("please try again") # MAKE A LOOP THAT KEEPS ASKING
+
 
 # Generates outputfile for all secret santa particpants
-for key,val in dictOfNames.items():
-    outFile = key + ".txt"
-    try:
-        with open(str(outFile), 'w') as outputfile:  # create output file
-            # prints to output file
-            print(key, file=outputfile)
-            print("Your secret santa is " + val, file=outputfile)
-        outputfile.close()
-        print("Results in file " + outFile)
-    except(IndexError):
-        print("Error creating file")
-        quit()
+# for key,val in dictOfNames.items():
+#     outFile = key + ".txt"
+#     try:
+#         with open(str(outFile), 'w') as outputfile:  # create output file
+#             # prints to output file
+#             print(key, file=outputfile)
+#             print("Your secret santa is " + val, file=outputfile)
+#         outputfile.close()
+#         print("Results in file " + outFile)
+#     except(IndexError):
+#         print("Error creating file")
+#         quit()
 
 
 #Test the output
